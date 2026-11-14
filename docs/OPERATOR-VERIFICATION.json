@@ -1,0 +1,237 @@
+{
+  "time_tehran": "2026-11-14T21:39:41.351644+03:30",
+  "path": "native networkMode.html CGI9/subcmd0, same GET object merged as native UI",
+  "target_plmn": "43211",
+  "native_network_posts": [
+    {
+      "phase": "select_mci_native",
+      "submitted": true,
+      "success": true
+    },
+    {
+      "phase": "restore_exact_original_profile",
+      "submitted": true,
+      "success": true
+    }
+  ],
+  "reboots": [
+    {
+      "phase": "activate_native_manual_plmn",
+      "command": 6,
+      "submitted": true,
+      "fresh_login_verified": true
+    },
+    {
+      "phase": "restore_automatic_selection",
+      "command": 6,
+      "submitted": true
+    }
+  ],
+  "bands_changed": false,
+  "rat_mode_changed": false,
+  "firmware_flash": false,
+  "physical_sim_changed": false,
+  "observations": [
+    {
+      "phase": "native_baseline",
+      "seconds": 6.0,
+      "cached_eps_status": null,
+      "cached_status_read_ok": true,
+      "mode": 0,
+      "plmn": "43244",
+      "eps_status": 1,
+      "attached": true,
+      "band": "42",
+      "earfcn": "41890",
+      "rsrp": "-82",
+      "sinr": "11",
+      "radio_read_ok": true,
+      "router_read_ok": true,
+      "wan_assigned": true
+    },
+    {
+      "phase": "native_mci_attempt",
+      "seconds": 174.3,
+      "cached_eps_status": null,
+      "cached_status_read_ok": true,
+      "mode": 0,
+      "plmn": "43244",
+      "eps_status": 1,
+      "attached": true,
+      "band": "42",
+      "earfcn": "41890",
+      "rsrp": "-82",
+      "sinr": "11",
+      "radio_read_ok": true,
+      "router_read_ok": true,
+      "wan_assigned": true
+    },
+    {
+      "phase": "native_mci_attempt",
+      "seconds": 189.1,
+      "cached_eps_status": null,
+      "cached_status_read_ok": true,
+      "mode": 0,
+      "plmn": "43244",
+      "eps_status": 1,
+      "attached": true,
+      "band": "42",
+      "earfcn": "41890",
+      "rsrp": "-82",
+      "sinr": "11",
+      "radio_read_ok": true,
+      "router_read_ok": true,
+      "wan_assigned": true
+    },
+    {
+      "phase": "native_mci_attempt",
+      "seconds": 204.8,
+      "cached_eps_status": null,
+      "cached_status_read_ok": true,
+      "mode": 0,
+      "plmn": "43244",
+      "eps_status": 1,
+      "attached": true,
+      "band": "42",
+      "earfcn": "41890",
+      "rsrp": "-82",
+      "sinr": "11",
+      "radio_read_ok": true,
+      "router_read_ok": true,
+      "wan_assigned": true
+    },
+    {
+      "phase": "native_mci_attempt",
+      "seconds": 219.7,
+      "cached_eps_status": null,
+      "cached_status_read_ok": true,
+      "mode": 0,
+      "plmn": "43244",
+      "eps_status": 1,
+      "attached": true,
+      "band": "42",
+      "earfcn": "41890",
+      "rsrp": "-82",
+      "sinr": "12",
+      "radio_read_ok": true,
+      "router_read_ok": true,
+      "wan_assigned": true
+    },
+    {
+      "phase": "native_mci_attempt",
+      "seconds": 235.3,
+      "cached_eps_status": null,
+      "cached_status_read_ok": true,
+      "mode": 0,
+      "plmn": "43244",
+      "eps_status": 1,
+      "attached": true,
+      "band": "42",
+      "earfcn": "41890",
+      "rsrp": "-82",
+      "sinr": "12",
+      "radio_read_ok": true,
+      "router_read_ok": true,
+      "wan_assigned": true
+    },
+    {
+      "phase": "native_mci_attempt",
+      "seconds": 249.7,
+      "cached_eps_status": null,
+      "cached_status_read_ok": true,
+      "mode": 0,
+      "plmn": "43244",
+      "eps_status": 1,
+      "attached": true,
+      "band": "42",
+      "earfcn": "41890",
+      "rsrp": "-83",
+      "sinr": "11",
+      "radio_read_ok": true,
+      "router_read_ok": true,
+      "wan_assigned": true
+    },
+    {
+      "phase": "native_automatic_restored",
+      "seconds": 391.4,
+      "cached_eps_status": null,
+      "cached_status_read_ok": true,
+      "mode": 0,
+      "plmn": "43244",
+      "eps_status": 1,
+      "attached": true,
+      "band": "42",
+      "earfcn": "41890",
+      "rsrp": "-83",
+      "sinr": "10",
+      "radio_read_ok": true,
+      "router_read_ok": true,
+      "wan_assigned": true
+    }
+  ],
+  "observation_grace_seconds": 90,
+  "reason_for_final_attempt": "Previous native profile persisted but the immediate AT status read failed; allow registration procedure to settle before observing.",
+  "requested_differences": [
+    "plmnMode",
+    "plmnNumber"
+  ],
+  "stored_manual_differences": [
+    "TZ_PLMN_MODE",
+    "TZ_PLMN_NUMBER"
+  ],
+  "native_manual_profile_after_boot": {
+    "plmnMode": "1",
+    "plmnNumber": "43211",
+    "plmnAct": "7",
+    "lteModuleMode": "3"
+  },
+  "mci_registered": false,
+  "mci_internet_proven": false,
+  "automatic_reboot_verification": {
+    "reboot_count": 1,
+    "fresh_login": true,
+    "wan_assigned": true
+  },
+  "completed": true,
+  "mobinnet_restored": true,
+  "all_stored_values_restored": true,
+  "stored_keys": 177,
+  "post_test_export_transient_error_resolved_by_independent_readback": true,
+  "final_verified_tehran": "2026-11-14T21:47:39.864308+03:30",
+  "hardware_fdd_frontend_identified": false,
+  "other_physical_sims_tested": false,
+  "final_profile": {
+    "plmnMode": "0",
+    "plmnNumber": "",
+    "plmnAct": "7",
+    "lteModuleMode": "3"
+  },
+  "restored_network_check": {
+    "https": true,
+    "tls_verified": true,
+    "dns_from_modem": true,
+    "public_dns_success": [
+      true,
+      true
+    ],
+    "icmp": [
+      {
+        "target": "192.168.0.254",
+        "sent": 5,
+        "received": 5
+      },
+      {
+        "target": "1.1.1.1",
+        "sent": 5,
+        "received": 5
+      },
+      {
+        "target": "8.8.8.8",
+        "sent": 5,
+        "received": 5
+      }
+    ],
+    "pinned_to_modem_interface": true,
+    "routes_modified": false
+  }
+}

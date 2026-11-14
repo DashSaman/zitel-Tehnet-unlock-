@@ -52,3 +52,8 @@ Runtime dependencies: Python standard library only. Source: MIT; brand image has
 separate terms. shadcn/ui, Tailwind CSS and Lucide were reviewed as design
 references; no framework runtime or third-party icon code is bundled. See
 [asset/license notes](docs/ASSET-NOTICES.md).
+
+An owner-authorized MCI selection test with the current Mobinnet360 SIM did not
+produce an observed MCI connection: six settled observations remained43244/B42.
+This does not establish a physical FDD limitation or support for every SIM.
+[Operator test and restored-state evidence](docs/OPERATOR-TEST-FA.md).

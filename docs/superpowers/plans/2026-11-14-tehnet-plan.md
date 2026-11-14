@@ -23,21 +23,29 @@ missing optional telemetry, mobile/reduced motion, clean package installation.
 
 ## Tasks
 
-- [ ] Device baseline and recovery: native config+assets private backup; strict
+- [x] Device baseline and recovery: native config+assets private backup; strict
   PAC roundtrip; extract brand. Files client.py, recovery.py, tests/test_device.py.
-- [ ] Native account workflow: prove command98/102 payloads; fresh role verification;
+- [x] Native account workflow: prove supported command98/102 payloads; fresh role verification;
   narrow rollback on failure. Files accounts.py, tests/test_accounts.py. Test fake
   backend collisions and partial failure before real owner changes.
-- [ ] Companion server: protected sessions, status normalization and native menu
+- [x] Companion server: protected sessions, status normalization and native menu
   proxy. Files server.py, tests/test_server.py. Test unauthenticated/Host/Origin/
   cookie checks and session expiry without device writes.
-- [ ] UI: webui/index.html, app.js, styles.css, brand assets; real status, SVG
+- [x] UI: webui/index.html, app.js, styles.css, brand assets; real status, SVG
   history, English/RTL/dark/light/mobile/reduced-motion and all native menus.
   Browser-test both roles, charts, focus login, mobile and expired login.
-- [ ] Installer: CLI modes check,dry-run,install,backup,verify,rollback; secure wizard;
+- [x] Installer: CLI modes check,dry-run,install,backup,verify,rollback; secure wizard;
   PowerShell/CMD wrappers, DPAPI private state; tests/test_installer.py. Offline
   simulated rollback and clean-unpack smoke test; real backup and verification.
-- [ ] Distribution: documentation, sample placeholders, LICENSE and asset notices,
+- [x] Distribution preparation: documentation, sample placeholders, LICENSE and asset notices,
   AGENTS, CI secret/license/test checks; clean ZIP+SHA256, sanitized screenshots.
   Run all tests; inspect complete staged diff; scan secrets; publish source and
   prepare reviewable release assets. Do not publish an unreviewed final release.
+
+- [ ] Owner approval and final publication of the Draft Release. A public-release
+  one-line download/install command follows only after the release actually exists.
+
+Supported account scope is recorded in ADMIN-ROLES-FA.md; SUPER rename was
+rejected and is intentionally not claimed. Physical second-device installation
+is unverified. Operator selection and full restoration evidence are in
+OPERATOR-TEST-FA.md; no universal-SIM or physical FDD claim is made.

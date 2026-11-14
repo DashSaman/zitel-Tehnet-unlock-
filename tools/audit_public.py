@@ -12,8 +12,10 @@ PATTERNS=[rb'-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----',
           rb'(?i)"sessionId"\s*:\s*"[a-f0-9]{32,128}"']
 
 def public_files():
-    return sorted(path for path in ROOT.rglob('*') if path.is_file() and not any(
+    files=(path for path in ROOT.rglob('*') if path.is_file() and not any(
         part in ['.git','__pycache__','.venv','dist','test-results','playwright-report'] for part in path.relative_to(ROOT).parts))
+    # WindowsPath ordering folds case; archive paths need the same order on Linux.
+    return sorted(files,key=lambda path:path.relative_to(ROOT).as_posix())
 
 def audit():
     errors=[];files=public_files()

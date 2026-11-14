@@ -1,0 +1,2 @@
+# Optional browser QA only. Runtime uses the Python standard library.
+playwright==1.65.2

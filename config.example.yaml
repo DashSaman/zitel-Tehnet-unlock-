@@ -1,0 +1,26 @@
+# Template only. Firmware slots/roles must be detected on the actual device.
+router:
+  address: "192.168.0.254"
+  model: "ZLT P19H"
+  hardware: "TZ7.821.183"
+  firmware: "3.2.27"
+interface:
+  mode: "COMPANION"
+  bind: "127.0.0.1"
+  port: 8765
+  language: "fa"
+accounts:
+  user:
+    preferred_username: "user"
+    password: "PROMPT_ON_INSTALL"
+    slot: "PRIMARY_IF_VERIFIED"
+  admin:
+    preferred_username: "admin"
+    password: "PROMPT_ON_INSTALL"
+    role: "DETECT_FROM_BACKEND"
+  super_admin:
+    enabled: "DETECT_IF_SUPPORTED"
+    preferred_username: "KEEP_NATIVE_USERNAME"
+    password: "PROMPT_ON_INSTALL"
+# On tested firmware, admin and SUPER refer to one privileged account.
+# This file is documentation, not an unattended credential input file.

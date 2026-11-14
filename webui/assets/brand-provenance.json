@@ -1,0 +1,26 @@
+{
+  "brand_source": "https://tehnet.ir",
+  "logo_source": "https://tehnet.ir/wp-content/themes/tehnet/assets/img/tehnet-logo.jpg",
+  "logo_sha256": "6a095bdbb67f81fddd2bbd8aa40444b37ad1a5f2ec482f8556c4b5a03c1ddcfa",
+  "theme_css_source": "https://tehnet.ir/wp-content/themes/tehnet/assets/css/visual-refresh.css",
+  "dark": {
+    "background": "#080f18",
+    "surface": "#0b141f",
+    "card": "#101c29",
+    "text": "#eaf1f8",
+    "muted": "#9aabbc",
+    "accent": "#79e7f7",
+    "blue": "#33c9ee"
+  },
+  "light": {
+    "background": "#f5f8fb",
+    "surface": "#edf3f8",
+    "card": "#ffffff",
+    "text": "#122b3d"
+  },
+  "wordpress_brand_palette": {
+    "blue": "#0b4f8a",
+    "turquoise": "#16c7c4"
+  },
+  "note": "Logo reused at the brand owner request. Brand assets are excluded from the software MIT license; no copied website layout or runtime framework dependency."
+}

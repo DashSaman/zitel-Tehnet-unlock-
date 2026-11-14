@@ -1,0 +1,42 @@
+name: Prepare draft for owner review
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: p19h-draft-candidate
+  cancel-in-progress: false
+jobs:
+  draft:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.13'
+      - run: python -X utf8 -m unittest discover -s tests -v
+      - run: python tools/audit_public.py
+      - run: python tools/package.py
+      - name: Prepare draft only, never publish
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          tag=v0.1.0
+          if gh release view "$tag" --json isDraft >/dev/null 2>&1; then
+            draft=$(gh release view "$tag" --json isDraft --jq .isDraft)
+            if [ "$draft" != true ]; then
+              echo 'An existing published release is immutable for this workflow.'
+              exit 1
+            fi
+            gh release edit "$tag" --draft=true --prerelease --target "$GITHUB_SHA" --notes-file docs/RELEASE-REVIEW-FA.md
+            gh release upload "$tag" dist/TehranNetwork-ZLT-P19H-v0.1.0-candidate.zip dist/SHA256SUMS.txt --clobber
+          else
+            gh release create "$tag" dist/TehranNetwork-ZLT-P19H-v0.1.0-candidate.zip dist/SHA256SUMS.txt --draft --prerelease --target "$GITHUB_SHA" --title 'Tehran Network P19H 0.1.0 - owner review' --notes-file docs/RELEASE-REVIEW-FA.md
+          fi

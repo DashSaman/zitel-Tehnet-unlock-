@@ -1,0 +1,39 @@
+name: Verify source and privacy boundaries
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  checks:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        python: ['3.10', '3.13']
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Unit and boundary tests
+        run: python -X utf8 -m unittest discover -s tests -v
+      - name: Secret patterns, artifact boundaries and license notices
+        run: python tools/audit_public.py
+      - name: Build and verify candidate ZIP
+        run: python tools/package.py
+      - name: Parse PowerShell installers
+        if: runner.os == 'Windows'
+        shell: powershell
+        run: |
+          $errorsFound = @()
+          Get-ChildItem -LiteralPath installer -Filter '*.ps1' | ForEach-Object {
+            $parseTokens = $null
+            $parseErrors = $null
+            [System.Management.Automation.Language.Parser]::ParseFile($_.FullName, [ref]$parseTokens, [ref]$parseErrors) | Out-Null
+            $errorsFound += $parseErrors
+          }
+          if ($errorsFound.Count) { $errorsFound | Write-Output; exit 1 }

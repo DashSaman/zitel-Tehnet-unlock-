@@ -1,0 +1,10 @@
+{
+  "runtime": [],
+  "optional_development": [{"name":"playwright","version":"1.65.2","license":"Apache-2.0","purpose":"browser verification only"}],
+  "design_references_only": [
+    {"name":"shadcn/ui","license":"MIT","bundled":false},
+    {"name":"tailwindcss","license":"MIT","bundled":false},
+    {"name":"lucide","license":"ISC / identified Feather-derived MIT","bundled":false}
+  ],
+  "brand_asset_notice":"docs/ASSET-NOTICES.md"
+}

@@ -1,0 +1,35 @@
+{
+  "time_tehran": "2026-11-14T21:13:20.004740+03:30",
+  "mode": "companion",
+  "firmware_modified": false,
+  "persistent_config_writes_in_browser_test": false,
+  "dpapi_backup_roundtrip": true,
+  "second_device_tested": false,
+  "admin": {
+    "visible": true,
+    "hasSignal": true,
+    "role": "مدیر · نقش SUPER تأییدشده"
+  },
+  "real_history_chart": true,
+  "super_rename_honestly_disabled": true,
+  "native_menus": {
+    "body": 271,
+    "links": 30
+  },
+  "status_after_native_session_renewal": {
+    "status": 200,
+    "connected": "connected"
+  },
+  "ordinary": {
+    "visible": true,
+    "hasSignal": true,
+    "role": "Ordinary user"
+  },
+  "ordinary_username_editable": true,
+  "mobile_no_horizontal_overflow": true,
+  "reduced_motion": true,
+  "page_errors": [],
+  "all_stored_values_unchanged": true,
+  "stored_keys": 177,
+  "server_internal_errors": 0
+}

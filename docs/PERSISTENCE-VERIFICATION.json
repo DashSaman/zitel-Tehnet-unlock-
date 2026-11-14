@@ -1,0 +1,23 @@
+{
+  "submitted_tehran": "2026-11-14T20:55:29.762191+03:30",
+  "reboot_limit": 1,
+  "command": 6,
+  "authorized_in_owner_mission": true,
+  "changed_keys_from_initial_baseline": [
+    "TZ_PASSWD",
+    "TZ_SUPER_PASSWD",
+    "TZ_USERNAME"
+  ],
+  "persistence": {
+    "reboot_count": 1,
+    "fresh_login": true,
+    "wan_assigned": true
+  },
+  "all_stored_values_persisted": true,
+  "stored_keys": 177,
+  "ordinary_role_after_reboot": 2,
+  "administrator_role_after_reboot": 1,
+  "ordinary_has_admin_permission": false,
+  "firmware_flash": false,
+  "radio_changes": false
+}

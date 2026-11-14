@@ -1,0 +1,13 @@
+{
+  "time_tehran": "2026-11-14T21:04:08.594663+03:30",
+  "temporary_primary_rename_only": true,
+  "password_changed": false,
+  "firmware_flash": false,
+  "radio_changes": false,
+  "temporary_login_verified": true,
+  "targeted_rollback_verified": true,
+  "all_stored_values_restored": true,
+  "stored_keys": 177,
+  "final_primary_login_verified": true,
+  "connection_after": "connected"
+}

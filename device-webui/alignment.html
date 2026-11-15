@@ -1,0 +1,36 @@
+<section id="alignment-view" class="alignment-view" hidden>
+ <article class="card guide-intro"><span class="eyebrow">SIGNAL ALIGNMENT</span>
+  <h2><span class="lang-fa">تنظیم جهت، قدم‌به‌قدم</span><span class="lang-en">Find a better direction, step by step</span></h2>
+  <p class="muted lang-fa">به‌جای تعداد خط آنتن، کیفیت واقعی را مقایسه کنید. مودم در هر موقعیت ثابت بماند و چند نمونه ثبت شود.</p>
+  <p class="muted lang-en">Compare real signal quality rather than signal bars. Keep the modem still while collecting several samples at each position.</p>
+  <div class="guide-health" id="alignment-health" role="status"></div>
+ </article>
+ <div class="guide-steps">
+  <article class="card"><span class="step-number">۱ / 1</span><h3 class="lang-fa">اول اتصال را آماده کنید</h3><h3 class="lang-en">Prepare the connection</h3>
+   <p class="lang-fa">سیم باید «آماده» باشد. برای تعویض سیم، برق مودم را قطع کنید و سیم را درست در شیار قرار دهید. اگر سیم شناخته نمی‌شود، چرخاندن آنتن کمکی نمی‌کند. حالت شبکه و APN را مطابق سرویس سیم تنظیم کنید.</p>
+   <p class="lang-en">The SIM must be ready. Power off before changing the SIM and seat it correctly. Turning the antenna cannot fix a missing SIM. Use the network and APN settings for your service.</p></article>
+  <article class="card"><span class="step-number">۲ / 2</span><h3 class="lang-fa">جای مناسب و چرخش درشت</h3><h3 class="lang-en">Choose a location and coarse direction</h3>
+   <p class="lang-fa">در محل امن و قابل‌دسترسی، جلوی مودم را به فضای باز و دور از دیوار ضخیم، فلز و مانع نزدیک قرار دهید. در چند جهت متفاوت آزمایش کنید. هنگام جابه‌جایی، کابل و اتصال PoE را نکشید و برای نصب روی ارتفاع از فرد مجهز کمک بگیرید.</p>
+   <p class="lang-en">Use a safe, accessible location with a clear view away from nearby metal and thick walls. Try several directions. Avoid straining the cable or PoE connection; elevated installation needs proper equipment.</p></article>
+  <article class="card"><span class="step-number">۳ / 3</span><h3 class="lang-fa">چرخش ریز و زمان انتظار</h3><h3 class="lang-en">Fine adjustment and settling</h3>
+   <p class="lang-fa">اطراف جهت بهتر، هر بار حدود ۱۰ تا ۱۵ درجه بچرخانید؛ سپس ۲۰ تا ۳۰ ثانیه ثابت نگه دارید. نام موقعیت را وارد کنید و نمونه‌برداری را بزنید. دست یا بدن را جلوی مودم نگه ندارید.</p>
+   <p class="lang-en">Near a promising direction, rotate about 10–15 degrees at a time and wait 20–30 seconds. Name the position, then collect samples. Keep your hand and body clear of the front.</p></article>
+  <article class="card"><span class="step-number">۴ / 4</span><h3 class="lang-fa">کیفیت، پایداری، سپس سرعت</h3><h3 class="lang-en">Quality, stability, then speed</h3>
+   <p class="lang-fa">SINR بیشتر و RSRQ نزدیک‌تر به صفر معمولاً بهترند. RSRP قوی‌تر به‌تنهایی کافی نیست. اگر باند یا سلول عوض شد، نتیجه را جداگانه ارزیابی کنید. بعد از انتخاب جهت، در شرایط یکسان و ترجیحاً با کابل شبکه سرعت را مقایسه کنید.</p>
+   <p class="lang-en">Higher SINR and RSRQ closer to zero usually help. Stronger RSRP alone is not enough. Evaluate band or cell changes separately. Compare actual speeds under the same conditions, preferably over Ethernet.</p></article>
+ </div>
+ <article class="card alignment-recorder"><div class="card-top"><h2 class="lang-fa">مقایسهٔ موقعیت‌ها با نمونه‌های واقعی</h2><h2 class="lang-en">Compare positions with real samples</h2></div>
+  <div class="alignment-controls"><label for="position-name"><span class="lang-fa">نام جهت یا محل</span><span class="lang-en">Position label</span></label><input id="position-name" maxlength="64" placeholder="مثلاً پنجره، ۳۰ درجه / Window, 30°">
+   <button class="primary" id="alignment-start"><span class="lang-fa">نمونه‌برداری ۳۰ ثانیه‌ای</span><span class="lang-en">Collect for 30 seconds</span></button>
+   <button class="secondary" id="alignment-export">CSV ↓</button><button class="text-button" id="alignment-clear"><span class="lang-fa">پاک‌کردن مقایسه‌ها</span><span class="lang-en">Clear comparisons</span></button></div>
+  <div class="probe-directions" role="group" aria-label="حرکت آزمایشی"><button type="button" class="secondary" data-probe="baseline">◎ مبنا / Baseline</button><button type="button" class="secondary" data-probe="left">← چپ / Left</button><button type="button" class="secondary" data-probe="right">→ راست / Right</button><button type="button" class="secondary" data-probe="up">↑ بالا / Up</button><button type="button" class="secondary" data-probe="down">↓ پایین / Down</button></div>
+  <p class="muted small lang-fa">ابتدا مبنا را ثبت کنید؛ سپس از پشت مودم، حرکت کوچکی در جهت انتخاب‌شده انجام دهید و دوباره نمونه بگیرید. فلش کنار هر شاخص فقط بر اساس تغییر اندازه‌گیری‌شده پیشنهاد ادامه یا برگشت می‌دهد. بدون نمونهٔ قبل و بعد، جهت قابل تشخیص نیست.</p>
+  <p class="muted small lang-en">Capture a baseline, then make a small selected movement while standing behind the modem and capture again. Metric arrows suggest continuing or returning using the measured change. Direction cannot be inferred without before/after samples.</p>
+  <p id="alignment-progress" class="muted" role="status"></p><div class="settings-table-wrap"><table class="comparison-table"><thead><tr><th><span class="lang-fa">موقعیت</span><span class="lang-en">Position</span></th><th>SINR dB</th><th>RSRQ dB</th><th>RSRP dBm</th><th>Band / Cell</th><th><span class="lang-fa">نمونه</span><span class="lang-en">Samples</span></th></tr></thead><tbody id="alignment-results"></tbody></table></div>
+  <p id="alignment-recommendation" class="quiet-note"></p>
+ </article>
+ <article class="card guide-reference"><h2 class="lang-fa">این عددها چه می‌گویند؟</h2><h2 class="lang-en">What do the numbers mean?</h2>
+  <dl class="connection-list"><div><dt>RSRP</dt><dd class="lang-fa">قدرت سیگنال مفید؛ مثلاً ‎−85 از ‎−105 dBm قوی‌تر است.</dd><dd class="lang-en">Useful signal power: −85 is stronger than −105 dBm.</dd></div><div><dt>SINR</dt><dd class="lang-fa">نسبت سیگنال به تداخل؛ بالاتر بهتر است. بالای ۱۳ dB معمولاً مناسب‌تر و بالای ۲۰ خوب است؛ تضمین سرعت نیست.</dd><dd class="lang-en">Signal versus interference: higher is better. Above 13 dB is usually preferable and above 20 is strong; it does not guarantee throughput.</dd></div><div><dt>RSRQ</dt><dd class="lang-fa">کیفیت سیگنال؛ مثلاً ‎−10 از ‎−17 dB بهتر است.</dd><dd class="lang-en">Signal quality: −10 is better than −17 dB.</dd></div><div><dt>MHz ≠ Mbps</dt><dd class="lang-fa">پهنای کانال را شبکه تعیین می‌کند. جهت‌یابی باند جدید یا پهنای کانال دلخواه ایجاد نمی‌کند؛ شلوغی سایت، بسته و ظرفیت شبکه هم روی سرعت اثر دارند.</dd><dd class="lang-en">The network selects channel bandwidth. Alignment cannot add an unsupported band or arbitrary MHz. Cell load, plan and network capacity also affect speed.</dd></div></dl>
+  <p class="muted small"><span class="lang-fa">مراجع:</span><span class="lang-en">References:</span> <a href="https://mobinnet.ir/b/5891/" target="_blank" rel="noopener noreferrer">Mobinnet</a> · <a href="https://wiki.teltonika-networks.com/view/Mobile_Signal_Strength_Recommendations" target="_blank" rel="noopener noreferrer">Signal measurements</a></p>
+ </article>
+</section>

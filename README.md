@@ -1,4 +1,23 @@
-# Tehran Network · ZLT P19H Companion
+# Tehran Network · ZLT P19H
+
+The [native-router WebUI 0.3](docs/NATIVE-WEBUI-FA.md) runs directly on the owner's
+verified modem: all 27 main menus in our workspace, presentation-hidden SUPER
+controls, complete available telemetry, colored live charts and measured antenna
+alignment. Legacy entry pages redirect to our UI; no legacy iframe is used.
+Passwords are preserved. No radio firmware or calibration is installed.
+[One-line Windows installation](docs/ONE-LINE-NATIVE-FA.md) ·
+[Sanitized device results and limits](docs/DEVICE-RESULTS-FA.md)
+
+Native installation from a checkout (Windows, Python 3.10+, existing authorized
+SUPER command console required):
+
+```powershell
+python -X utf8 -m tehnet.native_install --check
+python -X utf8 -m tehnet.native_install --install
+```
+
+The installer below is the separate loopback Companion. Neither version proves
+FDD support or universal SIM compatibility. Only one physical P19H was tested.
 
 A lightweight, bilingual local management workspace for the **verified ZLT P19H
 3.2.27**. Real LTE signal history, dark/light themes, accessible mobile layouts,
@@ -36,9 +55,9 @@ ordinary primary username/password and SUPER password changes are verified;
 
 ## Release status
 
-Source and a tested candidate package are prepared for owner review. A final
-release installer URL/one-line download command is not claimed until the release
-actually exists. The package builder writes SHA256 alongside the candidate ZIP.
+Source and a checksum-pinned native runtime are published in this repository;
+see the one-line installation guide above. No separate GitHub Release is claimed.
+The source-package builder writes its ZIP and SHA256 in `dist`.
 
 ## Development
 

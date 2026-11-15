@@ -1,0 +1,222 @@
+{
+  "menus": [
+    {
+      "id": "SYS_INFO",
+      "text": "Running Information"
+    },
+    {
+      "id": "DEVICE_INFO",
+      "text": "Version Information"
+    },
+    {
+      "id": "CLIENT_LIST",
+      "text": "Attached Devices"
+    },
+    {
+      "id": "FLOW_INFO",
+      "text": "Traffic Statistics"
+    },
+    {
+      "id": "LTE_INFO",
+      "text": "Mobile Network Status"
+    },
+    {
+      "id": "BASIC_CONFIG",
+      "text": "WAN Settings"
+    },
+    {
+      "id": "NETWORK_CONFIG",
+      "text": "DHCP Settings"
+    },
+    {
+      "id": "ROUTER_TABLE",
+      "text": "Route Settings"
+    },
+    {
+      "id": "DIAL_CONFIG",
+      "text": "L2TP VPN"
+    },
+    {
+      "id": "SIM_LOCKING",
+      "text": "ISP Settings"
+    },
+    {
+      "id": "ADVANCED_CONFIG",
+      "text": "Advanced Settings"
+    },
+    {
+      "id": "FW_RULE",
+      "text": "Filtering Rules"
+    },
+    {
+      "id": "FW_MAC_FILTER",
+      "text": "MAC Filter"
+    },
+    {
+      "id": "FW_PORT_MAPPING",
+      "text": "Port Mapping"
+    },
+    {
+      "id": "FW_DMZ",
+      "text": "DMZ Host"
+    },
+    {
+      "id": "FW_ALG",
+      "text": "ALG Services"
+    },
+    {
+      "id": "FW_URL_FILTER",
+      "text": "URL Filter"
+    },
+    {
+      "id": "FW_IP_MAC_BINDING",
+      "text": "IP MAC Binding"
+    },
+    {
+      "id": "FW_SPEED_LIMIT",
+      "text": "Speed Limit"
+    },
+    {
+      "id": "FW_BACKUP_FIREWALL",
+      "text": "Backup Firewall"
+    },
+    {
+      "id": "SYS_SET",
+      "text": "System Settings"
+    },
+    {
+      "id": "SYS_LOG",
+      "text": "System Log"
+    },
+    {
+      "id": "SYS_UPDATE",
+      "text": "System Upgrade"
+    },
+    {
+      "id": "CONFIG_UPDATE",
+      "text": "Config Upgrade"
+    },
+    {
+      "id": "NETWORK_TOOLS",
+      "text": "Network Tools"
+    },
+    {
+      "id": "SYS_REBOOT",
+      "text": "Reboot"
+    },
+    {
+      "id": "SYS_HELPER",
+      "text": "Help"
+    }
+  ],
+  "routes": {
+    "SYS_INFO": {
+      "cmd": 0,
+      "url": "html/info/sysInfo.html"
+    },
+    "CLIENT_LIST": {
+      "cmd": 120,
+      "url": "html/info/clientListInfo.html"
+    },
+    "FLOW_INFO": {
+      "cmd": 18,
+      "url": "html/info/flowInfo.html"
+    },
+    "DEVICE_INFO": {
+      "cmd": 0,
+      "url": "html/info/deviceInfo.html"
+    },
+    "LTE_INFO": {
+      "cmd": 186,
+      "url": "html/lte/lteIndex.html"
+    },
+    "BASIC_CONFIG": {
+      "cmd": 9,
+      "url": "html/basic/basicConfig.html"
+    },
+    "NETWORK_CONFIG": {
+      "cmd": 3,
+      "url": "html/config/networkConfig.html"
+    },
+    "DIAL_CONFIG": {
+      "cmd": 119,
+      "url": "html/config/dialConfig.html"
+    },
+    "ADVANCED_CONFIG": {
+      "cmd": 9,
+      "url": "html/advance/advancedConfig.html"
+    },
+    "ROUTER_TABLE": {
+      "cmd": 164,
+      "url": "html/route/routeIndex.html"
+    },
+    "FW_RULE": {
+      "cmd": 21,
+      "url": "html/firewall/firewall.html"
+    },
+    "FW_MAC_FILTER": {
+      "cmd": 23,
+      "url": "html/firewall/firewall.html"
+    },
+    "FW_IP_MAC_BINDING": {
+      "cmd": 24,
+      "url": "html/firewall/firewall.html"
+    },
+    "FW_URL_FILTER": {
+      "cmd": 26,
+      "url": "html/firewall/firewall.html"
+    },
+    "FW_PORT_MAPPING": {
+      "cmd": 27,
+      "url": "html/firewall/firewall.html"
+    },
+    "FW_SPEED_LIMIT": {
+      "cmd": 25,
+      "url": "html/firewall/firewall.html"
+    },
+    "FW_DMZ": {
+      "cmd": 172,
+      "url": "html/firewall/dmz.html"
+    },
+    "FW_ALG": {
+      "cmd": 172,
+      "url": "html/firewall/alg.html"
+    },
+    "FW_BACKUP_FIREWALL": {
+      "cmd": 163,
+      "url": "html/firewall/backup.html"
+    },
+    "SYS_SET": {
+      "cmd": 102,
+      "url": "html/sys/sysConfigIndex.html"
+    },
+    "SYS_HELPER": {
+      "cmd": 16,
+      "url": "html/manage/sysHelper.html"
+    },
+    "SYS_LOG": {
+      "cmd": 17,
+      "url": "html/manage/sysLog.html"
+    },
+    "SYS_UPDATE": {
+      "cmd": 5,
+      "url": "html/update/sysUpdate.html"
+    },
+    "CONFIG_UPDATE": {
+      "cmd": 184,
+      "url": "html/update/configUpdate.html"
+    },
+    "SIM_LOCKING": {
+      "cmd": 181,
+      "url": "html/isp/ispConfig.html"
+    },
+    "NETWORK_TOOLS": {
+      "cmd": 168,
+      "url": "html/tools/toolsIndex.html"
+    },
+    "SYS_REBOOT": {
+      "cmd": 6,
+      "url": ""
+    }
+  }
+}

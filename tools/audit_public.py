@@ -1,5 +1,8 @@
 """Fail closed on accidentally packaged private artifacts/common secret formats."""
 import json
+import base64
+import io
+import zipfile
 from pathlib import Path
 import re
 import sys
@@ -24,6 +27,18 @@ def audit():
         if path.suffix.lower() in ['.pac','.dpapi','.conf','.log','.pyc'] or path.name=='.env' or any(part.lower() in ['private','backups'] for part in path.relative_to(ROOT).parts):
             errors.append(rel+': private artifact type');continue
         data=path.read_bytes()
+        if rel.startswith('packages/') and rel.endswith('.zip.b64'):
+            try:
+                decoded=base64.b64decode(data,validate=True)
+                with zipfile.ZipFile(io.BytesIO(decoded)) as archive:
+                    if archive.testzip() or len(archive.infolist())>100:raise ValueError('invalid package')
+                    for member in archive.infolist():
+                        parts=Path(member.filename).parts
+                        if member.file_size>1024*1024 or '..' in parts or member.filename.startswith('/') or any(x.lower() in ['private','backups','.git'] for x in parts):raise ValueError('invalid member')
+                        content=archive.read(member)
+                        if any(re.search(pattern,content) for pattern in PATTERNS):raise ValueError('secret-like member')
+                        if Path(member.filename).suffix.lower() not in ALLOWED_BINARY:content.decode('utf-8')
+            except (ValueError,UnicodeError,zipfile.BadZipFile):errors.append(rel+': invalid or private package')
         if path.suffix.lower() not in ALLOWED_BINARY:
             try:data.decode('utf-8')
             except UnicodeError:errors.append(rel+': unexpected binary file');continue

@@ -6,7 +6,7 @@ import zipfile
 from audit_public import audit,public_files,ROOT
 if audit():raise SystemExit(1)
 out=ROOT/'dist';out.mkdir(exist_ok=True)
-name='TehranNetwork-ZLT-P19H-v0.1.0-candidate.zip';path=out/name
+name='TehranNetwork-ZLT-P19H-v0.3.0-source.zip';path=out/name
 with zipfile.ZipFile(path,'w',compression=zipfile.ZIP_DEFLATED,compresslevel=9) as archive:
     for source in public_files():
         info=zipfile.ZipInfo('TehranNetwork-ZLT-P19H/'+source.relative_to(ROOT).as_posix(),(2026,11,14,0,0,0))

@@ -23,3 +23,10 @@ icon path or package from these projects is bundled. UI shapes/navigation glyphs
 are authored here or standard text glyphs. Runtime dependencies are empty. Optional
 browser QA uses Playwright Python1.65.2 (Apache2.0); it is not distributed in the
 runtime package. Python's standard library is provided by the owner's installation.
+
+The native-router variant loads `/js/sha256.js` already present on that owner's
+modem; it does not redistribute that vendor file. Its small MD5 implementation
+is authored here for the existing native challenge protocol. Optional JS protocol
+tests use an installed Node.js executable; no Node runtime is deployed to the
+modem. Retained vendor-page copies remain on the owner's device/private backup,
+outside this repository and its source package.

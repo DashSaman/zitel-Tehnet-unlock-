@@ -1,5 +1,23 @@
 # Security boundaries
 
+The native-router variant is separate from the loopback companion described
+below. It calls only the same-origin modem CGI on the verified private device,
+uses the existing challenge login, validates the device profile and protected
+SUPER read, and stores only the transient native session and username in
+sessionStorage. It adds no server, public listener, proxy, or account-writing
+endpoint. Its management transport and backend ACL remain those of the original
+HTTP modem service; the companion's HttpOnly cookie/CSRF wrapper is not present
+in this mode. Account changes open the native forms inside our workspace. No password or
+password digest is stored by the native adapter.
+
+The optional native installer uses the supplied SUPER's already-authorized
+command console, checks the exact profile and root target, and installs static
+files only. It does not guess passwords or create an unauthenticated endpoint.
+Console transfers use the verified Lua binary converter rather than assuming
+base64 exists in the device BusyBox. Backups are DPAPI-protected locally and
+stored outside the served webroot on the modem. Unknown results stop the
+transaction; incomplete journals require inspection before continuing.
+
 Only the tested owner's private P19H endpoint is supported. The companion binds
 127.0.0.1, validates Host, rejects cross-origin requests, requires an HttpOnly
 SameSiteStrict session cookie and CSRF token for API writes, and disables indexing.

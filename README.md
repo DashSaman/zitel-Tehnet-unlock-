@@ -7,6 +7,7 @@ alignment. Legacy entry pages redirect to our UI; no legacy iframe is used.
 Passwords are preserved. No radio firmware or calibration is installed.
 [One-line Windows installation](docs/ONE-LINE-NATIVE-FA.md) ·
 [Sanitized device results and limits](docs/DEVICE-RESULTS-FA.md)
+[Encrypted original owner recovery backup](docs/OWNER-RECOVERY-FA.md)
 
 Native installation from a checkout (Windows, Python 3.10+, existing authorized
 SUPER command console required):

@@ -5,7 +5,7 @@ from package_native import build,ROOT
 
 if __name__=='__main__':
     metadata=build()
-    template=r'''param([ValidateSet('check','install')][string]$Mode='install',[string]$Router='192.168.0.254')
+    template=r'''param([ValidateSet('check','install')][string]$Mode='install',[string]$Router='192.168.0.254',[switch]$DownloadOnly)
 $ErrorActionPreference='Stop'
 $ProgressPreference='SilentlyContinue'
 [Net.ServicePointManager]::SecurityProtocol=[Net.SecurityProtocolType]::Tls12
@@ -20,9 +20,13 @@ New-Item -ItemType Directory -Path $packageRoot -Force | Out-Null
 $zipPath=Join-Path $packageRoot 'runtime.zip'
 $encoded=[string](Invoke-RestMethod -Uri $runtimeUrl)
 [IO.File]::WriteAllBytes($zipPath,[Convert]::FromBase64String($encoded.Trim()))
-if((Get-FileHash -LiteralPath $zipPath -Algorithm SHA256).Hash.ToLowerInvariant() -ne $expectedHash){throw 'Runtime checksum mismatch. Nothing was executed on the modem.'}
+$hashAlgorithm=[Security.Cryptography.SHA256]::Create()
+try {$actualHash=[BitConverter]::ToString($hashAlgorithm.ComputeHash([IO.File]::ReadAllBytes($zipPath))).Replace('-','').ToLowerInvariant()} finally {$hashAlgorithm.Dispose()}
+if($actualHash -ne $expectedHash){throw 'Runtime checksum mismatch. Nothing was executed on the modem.'}
 $runtimePath=Join-Path $packageRoot 'runtime'
-Expand-Archive -LiteralPath $zipPath -DestinationPath $runtimePath
+[Reflection.Assembly]::LoadWithPartialName('System.IO.Compression.FileSystem') | Out-Null
+[IO.Compression.ZipFile]::ExtractToDirectory($zipPath,$runtimePath)
+if($DownloadOnly){Write-Output ('Verified runtime extracted: '+$runtimePath);return}
 Push-Location -LiteralPath $runtimePath
 try {
     Write-Host 'Verified Tehran Network native UI 0.3.0. Existing passwords will be preserved.'
@@ -30,5 +34,5 @@ try {
     if($LASTEXITCODE -ne 0){throw 'Operation stopped. Inspect the encrypted journal before retrying.'}
 } finally {Pop-Location}
 '''
-    (ROOT/'installer/bootstrap-native.ps1').write_text(template.replace('@SHA256@',metadata['sha256']),encoding='utf-8')
+    (ROOT/'installer/bootstrap-native.ps1').write_text(template.replace('@SHA256@',metadata['sha256']),encoding='utf-8',newline='\n')
     print('Generated checksum-pinned bootstrap; package requires Python 3.10+ and an existing authorized SUPER console.')

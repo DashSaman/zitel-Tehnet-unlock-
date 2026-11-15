@@ -6,6 +6,7 @@
 رمزها حفظ می‌شوند. فقط روی یک P19H واقعی آزمایش شده؛ آنلاک همگانی باند یا سیم نیست.
 [جزئیات نسخهٔ مستقیم](docs/NATIVE-WEBUI-FA.md).
 [نصب تک‌خطی](docs/ONE-LINE-NATIVE-FA.md) · [نتایج واقعی دستگاه](docs/DEVICE-RESULTS-FA.md)
+[بکاپ اصلی رمزگذاری‌شده و بازگشت به زیتل](docs/OWNER-RECOVERY-FA.md)
 
 نصب مستقیم از سورس روی Windows با Python 3.10+ و حساب SUPER دارای کنسول بومی:
 
